@@ -1,0 +1,54 @@
+en:
+  greeting_message: "Hi! There"
+  greeting_message_1: "I am Smoozy and I will be your guide"
+  greeting_message_2: "I am going to show you the <b> undercover </b> job market"
+  greeting_message_3: https://meetfrank.com/images/hello/family-guy.gif
+  greeting_message_4: "I will bring you direct offers from TOP it company"
+  greeting_message_5: "If you interesting you can talk to there"
+  greeting_message_6: "You will remain anonymous the whole time"
+  greeting_message_7: "Sounds good? (answer yes)"
+  greeting_message_yes: /yes
+  starting_message: "Ok. Lets go to create your profile in 30 seconds"
+  starting_profile: "What is your name?"
+
+  new_vatation: "
+    Hi there. I have find 5 new vacation.
+
+    Drezden  🇩🇪
+
+    Frontend Developer
+    https://bit.ly/2tVkBLK
+
+    Software Architect
+    https://bit.ly/2KI47jN
+
+    The company is very successful since the beginning in 2014 and is growing fast. Its core business is an app that helps companies reach their employees better and comunicate more effectively.
+
+    Трактор в Баварию  🇩🇪
+
+    Evolvice Team is looking for Senior .NET Developer with relocation to our client to Bergkirchen (Germany, Bavaria).
+
+    Project: Impelmenting further features and later migrate the software also to a more web-based solution.
+    Product is a very famous CAD design program. It is nr. 2 in Germany. There are other employees from eastern Europe in this company.
+
+    https://bit.ly/2MmEfHF
+
+    Трактор в Мюнхен  🇩🇪
+
+    Daxx is looking for an Embedded Linux Software Developer
+    https://bit.ly/2Obf638
+
+    Трактор в Краков  🇵🇱
+
+    Intetics company is looking for Java developer to Krakow office. We fully ensure the process of relocation for you and your family. The project is a new platform for cross-media newsroom management targeted at medium-size and large publishing houses.
+
+    https://bit.ly/2vsiFeD "
+
+  farewell_message: "Bye! I'll miss you :("
+
+  recruter_message_1: "Hi there, we can help you with hunting best talent in IT"
+  recruter_message_2: https://lwlies.com/wp-content/uploads/2017/07/leon-the-professional-1108x0-c-default.jpg
+  recruter_message_3: "Do you want to start"
+  recruter_message_4: "Sounds good? (answer yes)"
+  recruter_message_5: "Ok. Lets go to create your profile in 30 seconds"
+  recruter_message_6: http://smoozy.io/company/sign_up
