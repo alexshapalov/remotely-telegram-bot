@@ -22,7 +22,6 @@ class MessageSender
     else
       bot.api.send_message(chat_id: chat.id, text: text)
     end
-
     logger.debug "sending '#{text}' to #{chat.username}"
   end
 

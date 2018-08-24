@@ -17,6 +17,8 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    chronic (0.10.2)
+    coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.0.5)
@@ -29,9 +31,13 @@ GEM
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    method_source (0.9.0)
     minitest (5.11.3)
     multipart-post (2.0.0)
     pg (1.0.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     rake (12.3.1)
     telegram-bot-ruby (0.8.6.1)
       faraday
@@ -45,6 +51,8 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
+    whenever (0.10.0)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -53,8 +61,10 @@ DEPENDENCIES
   activerecord
   i18n
   pg
+  pry
   rake
   telegram-bot-ruby
+  whenever
 
 BUNDLED WITH
    1.16.4

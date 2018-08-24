@@ -12,6 +12,10 @@ class MessageResponder
     @user = User.find_or_create_by(uid: message.from.id)
   end
 
+  def self.hi
+    p "Hello from lib/message_sender"
+  end
+
   def respond
     on /^\/start/ do
       answer_with_greeting_message
@@ -61,7 +65,7 @@ class MessageResponder
     answer_with_message I18n.t('greeting_message_3')
     sleep 1
     answer_with_message I18n.t('greeting_message_4')
-    sleep q
+    sleep 1
     answer_with_message I18n.t('greeting_message_5')
     sleep 1
     answer_with_message I18n.t('greeting_message_6')

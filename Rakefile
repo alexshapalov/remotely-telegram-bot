@@ -5,19 +5,45 @@ require 'pg'
 require 'active_record'
 require 'yaml'
 
-# desc 'Migrate the database'
-# task :up => :'db:connect' do
-#   migrations = if ActiveRecord.version.version >= '5.2'
-#     ActiveRecord::Migration.new.migration_context.migrations
-#   else
-#     ActiveRecord::Migrator.migrations('db/migrate')
-#   end
-#   ActiveRecord::Migrator.new(:up, migrations, nil).migrate
-# end
+require 'pry'
 
+require './lib/app_configurator'
+require './lib/message_responder'
+
+@mess = MessageResponder.hi
+
+@config = AppConfigurator.new
+@config.configure
+
+@token = @config.get_token
+@logger = @config.get_logger
+
+require 'telegram/bot'
+
+# start a REPL session
+
+
+namespace :task do
+  desc "Hello job"
+  task :newjob do
+    puts "Hello new job"
+    @logger.debug 'Starting telegram bot!!!'
+    @mess
+
+    # options = {bot: bot, message: message}
+    # @logger.debug "@#{message.from.username}: #{message.text}"
+    # MessageResponder.new(options).respond
+    # binding.pry
+
+    # MessageResponder.start
+
+    # logger.info "blah"
+    # command "echo 'you can use raw cron syntax too'"
+    # logger.debug 'Starting telegram bot'
+  end
+end
 
 namespace :db do
-
   desc 'Migrate the database'
   task :migrate do
     connection_details = YAML::load(File.open('config/database.yml'))

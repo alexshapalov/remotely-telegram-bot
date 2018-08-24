@@ -6,3 +6,5 @@ gem 'i18n'
 gem 'pg'
 gem 'rake'
 gem 'whenever', require: false
+
+gem 'pry'
