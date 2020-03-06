@@ -10,7 +10,10 @@ require 'pry'
 require './lib/app_configurator'
 require './lib/message_responder'
 
-@mess = MessageResponder.hi
+require 'standalone_migrations'
+StandaloneMigrations::Tasks.load_tasks
+
+# @mess = MessageResponder.new.answer_with_new_vacation
 
 @config = AppConfigurator.new
 @config.configure
@@ -28,7 +31,9 @@ namespace :task do
   task :newjob do
     puts "Hello new job"
     @logger.debug 'Starting telegram bot!!!'
-    @mess
+    options = {bot: bot, message: message.text }
+    mess = MessageResponder.new(options)
+    mess.answer_with_new_vacation
 
     # options = {bot: bot, message: message}
     # @logger.debug "@#{message.from.username}: #{message.text}"
@@ -43,31 +48,31 @@ namespace :task do
   end
 end
 
-namespace :db do
-  desc 'Migrate the database'
-  task :migrate do
-    connection_details = YAML::load(File.open('config/database.yml'))
+# namespace :db do
+#   desc 'Migrate the database'
+#   task :migrate do
+#     connection_details = YAML::load(File.open('db/database.yml'))
 
-    ActiveRecord::Base.establish_connection(connection_details)
-    # ActiveRecord::Migration.change('db/migrate/')
-    ActiveRecord::MigrationContext.new("db/migrate/").migrate
-  end
+#     ActiveRecord::Base.establish_connection(connection_details)
+#     # ActiveRecord::Migration.change('db/migrate/')
+#     ActiveRecord::MigrationContext.new("db/migrate/").migrate
+#   end
 
-  desc 'Create the database'
-  task :create do
-    connection_details = YAML::load(File.open('config/database.yml'))
-    admin_connection = connection_details.merge({'database'=> 'postgres',
-                                                'schema_search_path'=> 'public'})
-    ActiveRecord::Base.establish_connection(admin_connection)
-    ActiveRecord::Base.connection.create_database(connection_details.fetch('database'))
-  end
+#   desc 'Create the database'
+#   task :create do
+#     connection_details = YAML::load(File.open('db/database.yml'))
+#     admin_connection = connection_details.merge({'database'=> 'postgres',
+#                                                 'schema_search_path'=> 'public'})
+#     ActiveRecord::Base.establish_connection(admin_connection)
+#     ActiveRecord::Base.connection.create_database(connection_details.fetch('database'))
+#   end
 
-  desc 'Drop the database'
-  task :drop do
-    connection_details = YAML::load(File.open('config/database.yml'))
-    admin_connection = connection_details.merge({'database'=> 'postgres',
-                                                'schema_search_path'=> 'public'})
-    ActiveRecord::Base.establish_connection(admin_connection)
-    ActiveRecord::Base.connection.drop_database(connection_details.fetch('database'))
-  end
-end
+#   desc 'Drop the database'
+#   task :drop do
+#     connection_details = YAML::load(File.open('db/database.yml'))
+#     admin_connection = connection_details.merge({'database'=> 'postgres',
+#                                                 'schema_search_path'=> 'public'})
+#     ActiveRecord::Base.establish_connection(admin_connection)
+#     ActiveRecord::Base.connection.drop_database(connection_details.fetch('database'))
+#   end
+# end

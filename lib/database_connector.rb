@@ -18,7 +18,7 @@ class DatabaseConnector
     end
 
     def database_config_path
-      'config/database.yml'
+      'db/config.yml'
     end
   end
 end

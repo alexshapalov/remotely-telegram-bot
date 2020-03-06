@@ -17,12 +17,17 @@ Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
     options = {bot: bot, message: message}
 
-    logger.debug "@#{message.from.username}: #{message.text}: #{message.text}: #{message.text}"
-    
-    @user = User.find_or_create_by(uid: message.from.id)
-    @user.name = message.from.username
-    @user.description = message.text
-    @user.save
+    logger.debug "@#{message.from.username}: #{message.text}, #{message.from} ????" 
+
+    User.find_or_create_by!(
+      name: "aasasas",
+      email: message.text
+    )
+
+    # @user = User.find_or_create_by(uid: message.from.id)
+    # @user.name = message.from.username
+    # @user.description = message.text
+    # @user.save
 
     MessageResponder.new(options).respond
   end

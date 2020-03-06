@@ -7,12 +7,14 @@ class MessageSender
   attr_reader :chat
   attr_reader :answers
   attr_reader :logger
+  attr_reader :description
 
   def initialize(options)
     @bot = options[:bot]
     @text = options[:text]
     @chat = options[:chat]
     @answers = options[:answers]
+    @description = options[:description]
     @logger = AppConfigurator.new.get_logger
   end
 
@@ -22,7 +24,6 @@ class MessageSender
     else
       bot.api.send_message(chat_id: chat.id, text: text)
     end
-    logger.debug "sending '#{text}' to #{chat.username}"
   end
 
   private

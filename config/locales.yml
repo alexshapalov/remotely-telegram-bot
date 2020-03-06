@@ -1,3 +1,28 @@
+ru:
+  greeting_message: "Привет!"
+  greeting_message_1: "Я Котик - рекрутинговый бот"
+  greeting_message_2: "Хочу помочь тебе найти работу в IT в втоем городе, удаленно или на релокейт"
+  greeting_message_3: https://meetfrank.com/images/hello/family-guy.gif
+  greeting_message_4: "Я буду доставлять тебе инетересные персонализированные предложениия от разных компаний"
+  greeting_message_5: "Если тебя заинтересут вакансия просто откликнешься на нее"
+  greeting_message_6: "Весь процесс полностью анонимный"
+  greeting_message_7: "Начнем"
+  greeting_message_yes: /yes
+  starting_message: "Хорошо, давай создадим твой профайл, всего пара вопросов"
+  starting_profile_email: "Твой email"
+  starting_profile_current_position: "Ваша текущая позиция"
+  starting_profile_description: "Пару слов про себя"
+
+  starting_profile_thanks: "Спаибо! раз в день я буду присылать тебе нвоые позиции" 
+
+
+  recruter_message_1: "Привет, Я Bot - рекрутинговый бот. Помогу тебе хантить лучших специалистов в IT"
+  recruter_message_2: https://lwlies.com/wp-content/uploads/2017/07/leon-the-professional-1108x0-c-default.jpg
+  recruter_message_3: "В моей базее более 1000+ новых талантов каждый месяц"
+  recruter_message_4: "Звучит отлтично? Жми /yes"
+  recruter_message_5: "Ok. Для начала заполни профайл на сайте"
+  recruter_message_6: http://www.smoozy.io/
+
 en:
   greeting_message: "Hi! There"
   greeting_message_1: "I am Smoozy and I will be your guide"
