@@ -1,13 +1,24 @@
 ru:
-  greeting_message: "Привет!"
-  greeting_message_1: "Я Котик - рекрутинговый бот"
-  greeting_message_2: "Хочу помочь тебе найти работу в IT в втоем городе, удаленно или на релокейт"
-  greeting_message_3: https://meetfrank.com/images/hello/family-guy.gif
-  greeting_message_4: "Я буду доставлять тебе инетересные персонализированные предложениия от разных компаний"
-  greeting_message_5: "Если тебя заинтересут вакансия просто откликнешься на нее"
-  greeting_message_6: "Весь процесс полностью анонимный"
-  greeting_message_7: "Начнем"
+  greeting_message: "Привет! Это Remotely Job Bot. 
+
+Раз в сутки я высылаю самые лучшие вакансии на удаленку. 
+
+Я собираю вакансиию от луших IT компаний из Европы/США/СНГ
+
+Выбери категорию вакансий с помощью кнопок ниже. 
+
+В этом боте нет рекламы, а оповещения редкие и нужные."
+
+  # greeting_message_1: "Я Котик - рекрутинговый бот"
+  # greeting_message_2: "Хочу помочь тебе найти работу в IT в втоем городе, удаленно или на релокейт"
+  # greeting_message_3: https://meetfrank.com/images/hello/family-guy.gif
+  # greeting_message_4: "Я буду доставлять тебе инетересные персонализированные предложениия от разных компаний"
+  # greeting_message_5: "Если тебя заинтересут вакансия просто откликнешься на нее"
+  # greeting_message_6: "Весь процесс полностью анонимный"
+  # greeting_message_7: "Начнем"
+
   greeting_message_yes: /yes
+  greeting_message_3: https://meetfrank.com/images/hello/family-guy.gif
   starting_message: "Хорошо, давай создадим твой профайл, всего пара вопросов"
   starting_profile_email: "Твой email"
   starting_profile_current_position: "Ваша текущая позиция"

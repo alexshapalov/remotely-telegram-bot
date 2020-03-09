@@ -1,0 +1,5 @@
+"hello"
+Hello wordl
+D, [2018-08-24T14:04:02.208577 #56698] DEBUG -- : Starting telegram bot!!!
+"Hello from lib/message_sender"
+rake aborted!

@@ -37,7 +37,7 @@ class MessageResponder
       answer_with_greeting_message
     end
 
-    on /^\/yes/ do
+    on /^\/yes/ do      
       answer_with_yes_message
       
       #logger.debug "sending '#{text}' to #{chat.username}"
@@ -92,30 +92,32 @@ class MessageResponder
   def answer_with_greeting_message
     answer_with_message I18n.t('greeting_message')
     sleep 1
-    answer_with_message I18n.t('greeting_message_1')
-    sleep 2
-    answer_with_message I18n.t('greeting_message_2')
-    sleep 2
-    answer_with_message I18n.t('greeting_message_3')
-    sleep 2
-    answer_with_message I18n.t('greeting_message_4')
-    sleep 2
-    answer_with_message I18n.t('greeting_message_5')
-    sleep 2
-    answer_with_message I18n.t('greeting_message_6')
-    sleep 2
-    answer_with_message I18n.t('greeting_message_7')
-    answer_with_message I18n.t('starting_message')
+    # answer_with_message I18n.t('greeting_message_1')
+    # sleep 2
+    # answer_with_message I18n.t('greeting_message_2')
+    # sleep 2
+    # answer_with_message I18n.t('greeting_message_3')
+    # sleep 2
+    # answer_with_message I18n.t('greeting_message_4')
+    # sleep 2
+    # answer_with_message I18n.t('greeting_message_5')
+    # sleep 2
+    # answer_with_message I18n.t('greeting_message_6')
+    # sleep 2
+    # answer_with_message I18n.t('greeting_message_7')
+    # answer_with_message I18n.t('starting_message')
     answer_with_message I18n.t('greeting_message_yes')
-    sleep 2
+    # sleep 2
   end
 
   def answer_with_yes_message
+    answer_with_message I18n.t('greeting_message_3')
+
+    sleep 2
+
     answer_with_message I18n.t('starting_profile_email')
 
-    sleep 10
-
-    answer_with_message I18n.t('starting_profile_thanks')
+    # answer_with_message I18n.t('starting_profile_thanks')
     
     # answer_with_message I18n.t('starting_profile_current_position')
 
