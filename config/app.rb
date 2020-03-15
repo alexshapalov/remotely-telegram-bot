@@ -6,5 +6,5 @@ ActiveRecord::Base.establish_connection(
   encoding: 'unicode',
   pool: '5',
   timeout: '5000',
-  database: 'bot_test'
+  database: 'bot_dev'
 )

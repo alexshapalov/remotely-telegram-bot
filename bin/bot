@@ -15,30 +15,20 @@ logger = config.get_logger
 logger.debug 'Starting telegram bot'
 
 Telegram::Bot::Client.run(token) do |bot|
+ 
+  bot.api.send_message(chat_id: 140026745, text: "hello!!")
+
   bot.listen do |message|
 
-    bot.api.send_message(chat_id: 140026745, text: "hello")
+    options = {bot: bot, message: message}
 
-    logger.debug "Person attributes hash: #{message.inspect}"
-    logger.info "Processing the request..."
-    logger.fatal "Terminating application, raised unrecoverable error!!!"
+    logger.debug "@#{message.from.username}: #{message.text}" 
+      
+      # bot.api.send_message(chat_id: 140026745, text: "hello")
 
-    # case message
-    # when Telegram::Bot::Types::CallbackQuery
-    #   # Here you can handle your callbacks from inline buttons
-    #   if message.data == 'touch'
-    #     bot.api.send_message(chat_id: message.from.id, text: "Don't touch me!")
-    #   end
-    # when Telegram::Bot::Types::Message
-    #   kb = [
-    #     Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Go to Google', url: 'https://google.com'),
-    #     Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Touch me', callback_data: 'touch'),
-    #     Telegram::Bot::Types::InlineKeyboardButton.new(text: 'Switch to inline', switch_inline_query: 'some text')
-    #   ]
-    #   markup = Telegram::Bot::Types::InlineKeyboardMarkup.new(inline_keyboard: kb)
-    #   bot.api.send_message(chat_id: message.chat.id, text: 'Make a choice', reply_markup: markup)
-    # end
-
+      # logger.debug "Person attributes hash: #{message.inspect}"
+      # logger.info "Processing the request..."
+      # logger.fatal "Terminating application, raised unrecoverable error!!!"
 
     # options = {bot: bot, message: message}
 
@@ -47,19 +37,21 @@ Telegram::Bot::Client.run(token) do |bot|
 
     # # binding.pry
 
-    # @user = User.find_or_create_by(chat_id: message.from.id)
-    # @user.first_name = message.from.first_name,
-    # @user.last_name = message.from.last_name,
-    # @user.username = message.from.username,
-    # @user.email = message.text,
-    # @user.save!
+    @user = User.find_or_create_by(chat_id: message.from.id)
+    @user.first_name = message.from.first_name,
+    @user.last_name = message.from.last_name,
+    @user.username = message.from.username,
+    @user.email = message.text,
+    @user.save!
 
-    # # User.find_or_create_by(chat_id: message.from.id)
-    # #   email: message.text,
-    # #   first_name:  message.from.first_name,
-    # #   last_name:  message.from.last_name,
-    # #   username:  message.from.username,
-    # # )
+    MessageResponder.new(options).respond
+
+    # User.find_or_create_by(chat_id: message.from.id)
+    #   email: message.text,
+    #   first_name:  message.from.first_name,
+    #   last_name:  message.from.last_name,
+    #   username:  message.from.username,
+    # )
 
     # # @user = User.find_or_create_by(uid: message.from.id)
     # # @user.name = message.from.username

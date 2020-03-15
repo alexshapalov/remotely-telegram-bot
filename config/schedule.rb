@@ -11,7 +11,7 @@ every 1.minute do
   # command "/usr/bin/some_great_command"
   # runner "MyModel.some_method"
   puts "Start"
-  rake "task:hello_world"
+  rake "hello_world"
 end
 
 # Learn more: http://github.com/javan/whenever

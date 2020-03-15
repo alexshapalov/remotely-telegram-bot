@@ -14,3 +14,16 @@ test:
 production:
   <<: *default
   database: bot_prod
+
+
+# production:
+#   user_db:
+#     url: 
+#     database: my_primary_database
+#     user: root
+#     adapter: mysql
+#   jobs_db:
+#     database: my_primary_database
+#     user: root_readonly
+#     adapter: mysql
+#     replica: true

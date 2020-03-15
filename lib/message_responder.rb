@@ -10,7 +10,7 @@ ActiveRecord::Base.establish_connection(
   encoding: 'unicode',
   pool: '5',
   timeout: '5000',
-  database: 'bot_dev'
+  database: 'bot_dev' 
 )
 
 class User < ActiveRecord::Base
@@ -25,11 +25,6 @@ class MessageResponder
   def initialize(options)
     @bot = options[:bot]
     @message = options[:message]
-    # @user = User.find_or_create_by(uid: message.from.id)
-  end
-
-  def self.hi
-    p "Hello from lib/message_sender"
   end
 
   def respond
@@ -47,11 +42,10 @@ class MessageResponder
       # logger.debug "#{options[:message]}"
       # logger.debug "#{message.chat}"
 
-
       # User.find_or_create_by(
-      #             name: message.text, 
-      #             email: message.chat
-      #           )
+      #   name: message.text, 
+      #   email: message.chat
+      # )
 
       # if @user.email?
       #   starting_profile_current_position
