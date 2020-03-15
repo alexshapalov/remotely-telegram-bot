@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require 'pry'
 require 'telegram/bot'
-require 'whenever'
 
 require './lib/message_responder'
 require './lib/app_configurator'
@@ -19,16 +18,12 @@ Telegram::Bot::Client.run(token) do |bot|
   bot.api.send_message(chat_id: 140026745, text: "hello!!")
 
   bot.listen do |message|
-
     options = {bot: bot, message: message}
-
     logger.debug "@#{message.from.username}: #{message.text}" 
-      
-      # bot.api.send_message(chat_id: 140026745, text: "hello")
 
-      # logger.debug "Person attributes hash: #{message.inspect}"
-      # logger.info "Processing the request..."
-      # logger.fatal "Terminating application, raised unrecoverable error!!!"
+    # logger.debug "Person attributes hash: #{message.inspect}"
+    # logger.info "Processing the request..."
+    # logger.fatal "Terminating application, raised unrecoverable error!!!"
 
     # options = {bot: bot, message: message}
 
@@ -37,27 +32,7 @@ Telegram::Bot::Client.run(token) do |bot|
 
     # # binding.pry
 
-    @user = User.find_or_create_by(chat_id: message.from.id)
-    @user.first_name = message.from.first_name,
-    @user.last_name = message.from.last_name,
-    @user.username = message.from.username,
-    @user.email = message.text,
-    @user.save!
-
     MessageResponder.new(options).respond
-
-    # User.find_or_create_by(chat_id: message.from.id)
-    #   email: message.text,
-    #   first_name:  message.from.first_name,
-    #   last_name:  message.from.last_name,
-    #   username:  message.from.username,
-    # )
-
-    # # @user = User.find_or_create_by(uid: message.from.id)
-    # # @user.name = message.from.username
-    # # @user.description = message.text
-    # # @user.save
-
-    # MessageResponder.new(options).respond
   end
+
 end

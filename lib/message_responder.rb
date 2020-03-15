@@ -1,9 +1,5 @@
 require 'active_record'
-
-# require './models/user'
 require './lib/message_sender'
-# require './lib/message_recruter'
-# require './lib/message_talent'
 
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
@@ -34,23 +30,13 @@ class MessageResponder
 
     on /^\/yes/ do      
       answer_with_yes_message
-      
-      #logger.debug "sending '#{text}' to #{chat.username}"
-      # email = message.text
-      # logger.debug "#{message.text}"
-      # logger.debug "#{message}"
-      # logger.debug "#{options[:message]}"
-      # logger.debug "#{message.chat}"
 
-      # User.find_or_create_by(
-      #   name: message.text, 
-      #   email: message.chat
-      # )
-
-      # if @user.email?
-      #   starting_profile_current_position
-      #   @user.position = message.text
-      # end
+      @user = User.find_or_create_by(chat_id: message.from.id)
+      @user.first_name = message.from.first_name,
+      @user.last_name = message.from.last_name,
+      @user.username = message.from.username,
+      @user.email = message.text
+      @user.save
     end
 
     on /^\/new/ do
@@ -86,38 +72,13 @@ class MessageResponder
   def answer_with_greeting_message
     answer_with_message I18n.t('greeting_message')
     sleep 1
-    # answer_with_message I18n.t('greeting_message_1')
-    # sleep 2
-    # answer_with_message I18n.t('greeting_message_2')
-    # sleep 2
-    # answer_with_message I18n.t('greeting_message_3')
-    # sleep 2
-    # answer_with_message I18n.t('greeting_message_4')
-    # sleep 2
-    # answer_with_message I18n.t('greeting_message_5')
-    # sleep 2
-    # answer_with_message I18n.t('greeting_message_6')
-    # sleep 2
-    # answer_with_message I18n.t('greeting_message_7')
-    # answer_with_message I18n.t('starting_message')
     answer_with_message I18n.t('greeting_message_yes')
-    # sleep 2
   end
 
   def answer_with_yes_message
     answer_with_message I18n.t('greeting_message_3')
-
     sleep 2
-
     answer_with_message I18n.t('starting_profile_email')
-
-    # answer_with_message I18n.t('starting_profile_thanks')
-    
-    # answer_with_message I18n.t('starting_profile_current_position')
-
-    
-    # answer_with_message I18n.t('starting_profile_description')
-
   end
 
   def starting_profile_current_position
