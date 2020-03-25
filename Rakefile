@@ -10,8 +10,8 @@ require 'pry'
 require './lib/app_configurator'
 require './lib/message_responder'
 
-require 'standalone_migrations'
-StandaloneMigrations::Tasks.load_tasks
+# require 'standalone_migrations'
+# StandaloneMigrations::Tasks.load_tasks
 
 # @mess = MessageResponder.new.answer_with_new_vacation
 

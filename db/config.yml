@@ -27,3 +27,26 @@ production:
 #     user: root_readonly
 #     adapter: mysql
 #     replica: true
+
+
+# default: &default
+#   adapter: postgresql
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   #user_db:
+#   <<: *default
+#   database: bot_dev
+#   # job_db:
+#   #   <<: *default
+#   #   database: remotelyapp_dev
+#   #   replica: true
+
+# test:
+#   <<: *default
+#   database: bot_dev
+
+# production:
+#   <<: *default
+#   database: bot_prod

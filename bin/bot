@@ -14,12 +14,9 @@ logger = config.get_logger
 logger.debug 'Starting telegram bot'
 
 Telegram::Bot::Client.run(token) do |bot|
- 
-  bot.api.send_message(chat_id: 140026745, text: "hello!!")
-
   bot.listen do |message|
     options = {bot: bot, message: message}
-    logger.debug "@#{message.from.username}: #{message.text}" 
+    logger.debug "@#{message.from.username}: #{message.chat.id}" 
 
     # logger.debug "Person attributes hash: #{message.inspect}"
     # logger.info "Processing the request..."
